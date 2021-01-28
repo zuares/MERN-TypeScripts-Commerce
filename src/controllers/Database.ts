@@ -1,9 +1,15 @@
 import { Connection, connect, connection } from "mongoose";
+import { Product, ProductModel } from "../models/ProductModel";
+import { Payment, PaymentModel } from "../models/PaymentModel";
 import {User, UserModel} from '../models/UserModel';
+import {Category, CategoryModel} from '../models/CategoryModel';
 
 
 declare interface IModels {
-    User : UserModel
+    User : UserModel,
+    Product : ProductModel,
+    Payment : PaymentModel,
+    Category : CategoryModel,
 };
 
 
@@ -24,7 +30,10 @@ export class DB {
          this._db.on('close' , this.closed);
 
          this._models = {
-             User : new User().model
+             User : new User().model,
+             Product : new Product().model,
+             Payment : new Payment().model,
+             Category : new Category().model,
          }
     }
 

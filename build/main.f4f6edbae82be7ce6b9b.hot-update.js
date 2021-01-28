@@ -1,0 +1,16 @@
+exports.id = "main";
+exports.modules = {
+
+/***/ "./src/controllers/Database.ts":
+/*!*************************************!*\
+  !*** ./src/controllers/Database.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.DB = void 0;\nconst mongoose_1 = __webpack_require__(/*! mongoose */ \"mongoose\");\nconst ProductModel_1 = __webpack_require__(/*! ../models/ProductModel */ \"./src/models/ProductModel.ts\");\nconst PaymentModel_1 = __webpack_require__(/*! ../models/PaymentModel */ \"./src/models/PaymentModel.ts\");\nconst UserModel_1 = __webpack_require__(/*! ../models/UserModel */ \"./src/models/UserModel.ts\");\n;\nclass DB {\n    constructor() {\n        mongoose_1.connect(String(process.env.DB_URI), {\n            useNewUrlParser: true,\n            useCreateIndex: true,\n            useFindAndModify: false,\n            useUnifiedTopology: true\n        });\n        this._db = mongoose_1.connection;\n        this._db.on('open', this.connected);\n        this._db.on('close', this.closed);\n        this._models = {\n            User: new UserModel_1.User().model,\n            Product: new ProductModel_1.Product().model,\n            Payment: new PaymentModel_1.Payment().model,\n        };\n    }\n    static get Models() {\n        if (!DB._instance) {\n            DB._instance = new DB();\n        }\n        return DB._instance._models;\n    }\n    connected() {\n        console.log(`Mongoose has connected`);\n    }\n    closed() {\n        console.log(`Mongoose has errored`);\n    }\n}\nexports.DB = DB;\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRGF0YWJhc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY29udHJvbGxlcnMvRGF0YWJhc2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsdUNBQTJEO0FBQzNELHlEQUErRDtBQUMvRCx5REFBMEQ7QUFDMUQsbURBQW9EO0FBTW5ELENBQUM7QUFHRixNQUFhLEVBQUU7SUFLWDtRQUNJLGtCQUFPLENBQUUsTUFBTSxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFFLEVBQUM7WUFDakMsZUFBZSxFQUFHLElBQUk7WUFDdEIsY0FBYyxFQUFHLElBQUk7WUFDckIsZ0JBQWdCLEVBQUcsS0FBSztZQUN4QixrQkFBa0IsRUFBRyxJQUFJO1NBQzNCLENBQUMsQ0FBQztRQUNILElBQUksQ0FBQyxHQUFHLEdBQUcscUJBQVUsQ0FBQztRQUN0QixJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxNQUFNLEVBQUcsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDO1FBQ3JDLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLE9BQU8sRUFBRyxJQUFJLENBQUMsTUFBTSxDQUFDLENBQUM7UUFFbkMsSUFBSSxDQUFDLE9BQU8sR0FBRztZQUNYLElBQUksRUFBRyxJQUFJLGdCQUFJLEVBQUUsQ0FBQyxLQUFLO1lBQ3ZCLE9BQU8sRUFBRyxJQUFJLHNCQUFPLEVBQUUsQ0FBQyxLQUFLO1lBQzdCLE9BQU8sRUFBRyxJQUFJLHNCQUFPLEVBQUUsQ0FBQyxLQUFLO1NBQ2hDLENBQUE7SUFDTixDQUFDO0lBRU0sTUFBTSxLQUFLLE1BQU07UUFDcEIsSUFBRyxDQUFDLEVBQUUsQ0FBQyxTQUFTLEVBQUU7WUFDZCxFQUFFLENBQUMsU0FBUyxHQUFHLElBQUksRUFBRSxFQUFFLENBQUM7U0FDM0I7UUFFRCxPQUFPLEVBQUUsQ0FBQyxTQUFTLENBQUMsT0FBTyxDQUFDO0lBQ2hDLENBQUM7SUFFTyxTQUFTO1FBQ2IsT0FBTyxDQUFDLEdBQUcsQ0FBQyx3QkFBd0IsQ0FBQyxDQUFBO0lBQ3pDLENBQUM7SUFFTyxNQUFNO1FBQ1YsT0FBTyxDQUFDLEdBQUcsQ0FBQyxzQkFBc0IsQ0FBQyxDQUFBO0lBQ3ZDLENBQUM7Q0FDSjtBQXRDRCxnQkFzQ0MifQ==\n\n//# sourceURL=webpack:///./src/controllers/Database.ts?");
+
+/***/ })
+
+};
